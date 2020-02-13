@@ -1,4 +1,4 @@
-FROM fedora:31
+FROM fedora:30
 
 RUN \
   dnf install -y --setopt=install_weak_deps=False \
@@ -7,5 +7,5 @@ RUN \
 RUN vagrant plugin install vagrant-libvirt && \
   vagrant plugin install vagrant-managed-servers && \
   vagrant plugin install vagrant-rsync-back
-  
+
 RUN dnf install -y tmt-all
