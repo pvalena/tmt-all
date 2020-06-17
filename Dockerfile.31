@@ -1,16 +1,16 @@
 FROM fedora:31
 
-USER 0
-
-RUN \
+RUN set -x && \
   dnf install -y tmt-all && \
   dnf clean all && \
   useradd -u 1001 test
 
 USER 1001
+ENV HOME /home/test
 
-COPY plans /home/test/plans
+COPY plans $HOME/run/
 
-RUN cd /home/test && tmt init
+WORKDIR $HOME/run
 
-CMD tmt run
+RUN tmt init && tmt run | grep -E '^total: 4 tests passed$'
+CMD tmt run -v
