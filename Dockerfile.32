@@ -1,0 +1,16 @@
+FROM fedora:32
+
+USER 0
+
+RUN \
+  dnf install -y tmt-all && \
+  dnf clean all && \
+  useradd -u 1001 test
+
+USER 1001
+
+COPY plans /home/test/plans
+
+RUN cd /home/test && tmt init
+
+CMD tmt run

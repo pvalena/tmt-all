@@ -1,7 +1,0 @@
-FROM fedora/rawhide
-
-USER 0
-
-RUN \
-  dnf install -y tmt-all && \
-  dnf clean all

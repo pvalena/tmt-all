@@ -1,0 +1,24 @@
+# Use localhost by default
+provision:
+    how: virtual.vagrant
+
+# Install packages
+#prepare:
+#  - name: tmt
+#    how: install
+#    package: tmt
+#    copr: psss/tmt
+#    directory: tmp/RPMS/noarch
+
+# Ansible playbook
+#prepare:
+#    how: ansible
+#    playbooks: ansible/packages.yml
+
+# Shell commands
+#prepare:
+#    how: shell
+#    script:
+#    - sudo dnf install -y 'dnf-command(copr)'
+#    - sudo dnf copr enable -y psss/tmt
+#    - sudo dnf install -y tmt
