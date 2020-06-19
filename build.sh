@@ -8,6 +8,7 @@ ls -d Dockerfile.${1:-*} | cut -d'.' -f2- \
       im='pvalena/fedora-tmt-all:{}'
       podman rmi -f \$im
       podman build -f Dockerfile.{} . -t \$im && \
-      podman run --rm -it \$im \
+      podman run --rm -it \$im && \
+      podman push \$im \
       || exit 255
   "
