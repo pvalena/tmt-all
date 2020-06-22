@@ -12,6 +12,8 @@ Pushed to https://hub.docker.com/r/pvalena/fedora-tmt-all
 
 ## Build
 
+_Note: After a build, it will try to push the image, if you have access._
+
 ```
   # Builds all images
   $ ./build.sh
@@ -20,6 +22,14 @@ Pushed to https://hub.docker.com/r/pvalena/fedora-tmt-all
   # Build only F32 image
   $ ./build.sh 32
 ```
+
+### Namespace
+
+```
+  # To push into a different namespace
+  $ NAME=my_namespace ./build.sh 32
+```
+
 
 ## Rawhide image
 
