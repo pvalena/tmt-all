@@ -1,4 +1,5 @@
-FROM fedora:31
+ARG FROM
+FROM fedora:${FROM}
 
 RUN set -x && \
   dnf install -y tmt-all beakerlib && \
