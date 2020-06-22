@@ -1,18 +1,20 @@
 ARG FROM
 FROM fedora:${FROM}
 
+ENV HOME /home/test
+
+COPY plans/ $HOME/run/plans
+COPY .fmf/ $HOME/run/.fmf
+
 RUN set -x && \
   dnf install -y --setopt=tsflags=nodocs \
     tmt-all beakerlib && \
   dnf clean all --enablerepo='*' && \
   useradd -u 1001 test && \
+  chown -R test:test $HOME && \
   echo 'test ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER 1001
-ENV HOME /home/test
-
-COPY .fmf $HOME/run/
-COPY plans $HOME/run/
 
 WORKDIR $HOME/run
 
