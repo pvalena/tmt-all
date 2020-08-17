@@ -5,7 +5,7 @@ bash -n "$0"
 
 NAME="${NAME:-pvalena}"
 
-[[ -z "$1" ]] && exec "$0" latest 31 32 rawhide
+[[ -z "$1" ]] && exec "$0" latest 31 32 33 rawhide
 
 echo "${@}" | tr -s ' ' '\n' \
   | xargs -i bash -c "

@@ -1,5 +1,5 @@
 ARG FROM
-FROM fedora:${FROM}
+FROM registry.fedoraproject.org/fedora:${FROM}
 
 ENV HOME /home/test
 
