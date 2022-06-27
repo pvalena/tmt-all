@@ -1,5 +1,5 @@
 # tmt-all
-Dockerfile for images with [TMT](https://github.com/psss/tmt/).
+Dockerfile for images with [TMT](https://github.com/teemtee/tmt/).
 
 Pushed to https://quay.io/repository/tmt-all/fedora
 
