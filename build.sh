@@ -3,7 +3,7 @@
 set -e
 bash -n "$0"
 
-NAME="${NAME:-pvalena}"
+NAME="${NAME:-tmt-all}"
 
 [[ -z "$1" ]] && exec "$0" latest rawhide F35 F36
 
