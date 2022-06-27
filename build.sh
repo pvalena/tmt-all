@@ -3,7 +3,7 @@
 set -e
 bash -n "$0"
 
-ORG="${ORG}:-tmt-all"
+ORG="${ORG:-tmt-all}"
 
 [[ -z "$1" ]] && exec "$0" latest rawhide 34 35 36
 
