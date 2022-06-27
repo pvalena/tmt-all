@@ -1,7 +1,7 @@
 # tmt-all
 Dockerfile for images with [TMT](https://github.com/psss/tmt/).
 
-Pushed to https://hub.docker.com/r/pvalena/fedora-tmt-all/tags
+Pushed to https://quay.io/repository/tmt-all/fedora
 
 ## Usage
 
@@ -22,8 +22,8 @@ _Note: After a build, it will try to push the image, if you have access._
   $ ./build.sh
 ```
 ```
-  # Build only F32 image
-  $ ./build.sh 32
+  # Build only 32 image
+  $ ./build.sh 36
 ```
 Please check TMT documentaton for usage: https://tmt.readthedocs.io/en/latest/
 
@@ -31,5 +31,5 @@ Please check TMT documentaton for usage: https://tmt.readthedocs.io/en/latest/
 
 ```
   # To push into a different namespace
-  $ NAME=my_namespace ./build.sh 32
+  $ NAME=my_namespace ./build.sh 36
 ```
