@@ -7,10 +7,11 @@ Pushed to https://quay.io/repository/tmt-all/fedora
 
 ```
   # Run the TMT test suite from current directory
-  $ podman run --rm -it -v"$PWD:/home/test/run:Z" pvalena/fedora-tmt-all
-  
+  $ podman run --rm -it -v"$PWD:/home/test/run:Z" quay.io/tmt-all/fedora
+
   # Run the TMT plan from current directory (vverbosely):
-  $ podman run --rm -it -v"$PWD:/home/test/run:Z" pvalena/fedora-tmt-all:rawhide sudo tmt run -avv provision -h local
+  $ podman run --rm -it -v"$PWD:/home/test/run:Z" \
+      quay.io/tmt-all/fedora:rawhide sudo tmt run -avv provision -h local
 ```
 
 ## Build
@@ -22,14 +23,14 @@ _Note: After a build, it will try to push the image, if you have access._
   $ ./build.sh
 ```
 ```
-  # Build only 32 image
+  # Build only F36 image
   $ ./build.sh 36
 ```
 Please check TMT documentaton for usage: https://tmt.readthedocs.io/en/latest/
 
-### Namespace
+### Organization
 
 ```
-  # To push into a different namespace
-  $ NAME=my_namespace ./build.sh 36
+  # To push into a different organization
+  $ ORG=my_organization ./build.sh 36
 ```

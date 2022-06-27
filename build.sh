@@ -3,16 +3,16 @@
 set -e
 bash -n "$0"
 
-NAME="${NAME:-tmt-all}"
+ORG="${ORG}:-tmt-all"
 
-[[ -z "$1" ]] && exec "$0" latest rawhide F35 F36
+[[ -z "$1" ]] && exec "$0" latest rawhide 34 35 36
 
 echo "${@}" | tr -s ' ' '\n' \
   | xargs -i bash -c "
       set -x
-      im='${NAME}/fedora-tmt-all:{}'
+      im='quay.io/${ORG}/fedora:{}'
       podman rmi -f \$im
-      podman build --pull --squash --build-arg FROM='{}' . -t \$im \
+      podman build --pull --squash --build-arg FROM='{}' . -t ${SPACE}\$im \
         || exit 255
       podman push \$im
   "
