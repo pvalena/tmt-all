@@ -5,7 +5,7 @@ bash -n "$0"
 
 ORG="${ORG:-tmt-all}"
 
-[[ -z "$1" ]] && exec "$0" latest rawhide 34 35 36
+[[ -z "$1" ]] && exec "$0" latest rawhide 36 37
 
 echo "${@}" | tr -s ' ' '\n' \
   | xargs -i bash -c "
